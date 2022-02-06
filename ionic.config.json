@@ -1,0 +1,7 @@
+{
+  "name": "miniA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
