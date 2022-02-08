@@ -12,7 +12,21 @@
   <a> <p [routerLink]="['/admin-dashboard']"> admin dashboard </p></a>
   
 
-  
+  <ion-item>
+    <ion-label> product name   </ion-label>
+    <ion-label> product price  </ion-label>
+    <ion-label> product description </ion-label>
+    <ion-label> product discount </ion-label>
+    <ion-label> product image </ion-label>
+  </ion-item>
+
+  <ion-item  *ngFor='let data of data; let i = index' >
+    <ion-label  > {{data.product_name}} </ion-label>
+    <ion-label > {{data.product_price}} {{data.empLastName}} </ion-label>
+    <ion-label > {{data.product_description}} </ion-label>
+    <ion-label > {{data.product_discount}}  </ion-label>
+    <img src="{{image_location}}{{data.product_image_location}}" height="100" width="100">
+  </ion-item>
 
 </ion-content>
 

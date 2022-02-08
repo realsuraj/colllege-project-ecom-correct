@@ -33,6 +33,10 @@ app.listen(3000, () => console.log('express server is running at port no 3000'))
  //var for image picked orignal name
  let img_name;  
 
+ //making access to public 
+
+ app.use(express.static('public'))
+ app.use('/uploads',express.static('uploads'))
 
 //multer storage
 
@@ -118,6 +122,7 @@ app.post('/AddProduct' , (req,res)=> {
             res.send({message: "insert_successfully"})
             console.log("No error")
         }
+        else console.log(err)
     })
 } )
 
@@ -130,4 +135,16 @@ app.post('/addProductImage', upload.single('file'), (req, res, next) => {
       return next(error)
     }
       res.send(file);
+  })
+
+  app.get('/products',(req,res) => {
+      mysqlConnection.query('SELECT * from products',(err,rows,fields) => {
+          if(!err){
+              console.log(rows)
+              res.send(rows)
+          }
+          else{
+              console.log(err)
+          }
+      })
   })
