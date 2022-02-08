@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>adminDashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-input  name="name" type="text" placeholder="Product Name" [(ngModel)]="productName" [ngModelOptions]="{standalone: true}" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input  name="name" type="text" placeholder="Product Price" [(ngModel)]="productPrice" [ngModelOptions]="{standalone: true}" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input  name="name" type="text" placeholder="Product Discount" [(ngModel)]="productDiscount" [ngModelOptions]="{standalone: true}" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input  name="name" type="text" placeholder="Product Description" [(ngModel)]="productDescription" [ngModelOptions]="{standalone: true}" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input  name="name" type="file" placeholder="Name" (change)="upload($event)" accept="*.png.jpg" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-button  size="large" type="submit"  expand="block" (click)="submit()">submit </ion-button>
+  </ion-item>
+
+</ion-content>

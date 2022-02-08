@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
   username;
   password;
   
- async submit(){
+ submit(){
    let serverResponseData;
   const data = {
     username: this.username,
