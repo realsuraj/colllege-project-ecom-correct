@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>product_view</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+<img src= "{{localLocationImage}}{{productData.product_image_location}}" width="100" height="100">  
+
+<div>
+  <ion-label> {{productData.username}}</ion-label> <br>
+
+  
+<h2> Product Name </h2>
+<ion-label> {{productData.product_name}}</ion-label> <br>
+
+<h2> Product Price </h2>
+<ion-label> {{productData.product_price}}</ion-label> <br>
+
+<h2> Product Description </h2>
+<ion-label> {{productData.product_description}}</ion-label> <br>
+
+<h2> Product Discount </h2>
+<ion-label> {{productData.product_discount}}</ion-label> <br>
+
+
+</div>  
+
+
+<div padding>
+  <ion-button  size="large" type="submit"  (click)="AddCart()">Add Cart</ion-button>
+</div>
+<div padding>
+  <ion-button  size="large" type="submit"  (click)="submit()">Buy</ion-button>
+</div>
+
+</ion-content>

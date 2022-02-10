@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private http: HttpClient, private route: Router) { }
+  constructor(private http: HttpClient, private route: Router, private dataStored: UserService) { }
 
   ngOnInit() {
   }
@@ -29,7 +30,9 @@ export class LoginPage implements OnInit {
    if(serverResponseData.message == "Success")
    {
      console.log("in if condition");
+     this.dataStored.setData('username',data.username);
      this.route.navigate(['/home'], { queryParams: data.username })
+
    }
  })
 }

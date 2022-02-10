@@ -148,3 +148,14 @@ app.post('/addProductImage', upload.single('file'), (req, res, next) => {
           }
       })
   })
+
+  app.post('/AddCart', (req,res) => {
+    mysqlConnection.query('INSERT into user_cart (username,product) VALUES (?,?)',[req.body.username,req.body.product_name],
+    (err,row,fields) => {
+        if(!err) {
+            res.send({message: "insert_successfully"})
+            console.log("No error")
+        }
+        else console.log(err)
+    })
+  })

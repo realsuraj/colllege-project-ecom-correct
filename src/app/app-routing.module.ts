@@ -27,6 +27,18 @@ const routes: Routes = [
     path: 'admin-dashboard',
     loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
   },
+  {
+    path: 'product-view',
+    loadChildren: () => import('./product-view/product-view.module').then( m => m.ProductViewPageModule)
+  },
+  {
+    path: 'shop-cart',
+    loadChildren: () => import('./shop-cart/shop-cart.module').then( m => m.ShopCartPageModule)
+  },
+  {
+    path: 'user-profile',
+    loadChildren: () => import('./user-profile/user-profile.module').then( m => m.UserProfilePageModule)
+  },
 ];
 
 @NgModule({
